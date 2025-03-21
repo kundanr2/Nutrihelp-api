@@ -20,13 +20,12 @@ jobs:
       - name: Set up Python environment
         uses: actions/setup-python@v3
         with:
-          python-version: "3.10"
+          python-version: "3.8"
 
       - name: Install project dependencies
         run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt --extra-index-url https://pypi.org/simple
-
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
       - name: Execute Vulnerability Scanner
         run: python3 "Vulnerability_Tool/Vulnerability_Scanner_CI.py" > security_scan_report.txt
 
