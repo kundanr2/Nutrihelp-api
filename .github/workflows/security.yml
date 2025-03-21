@@ -28,7 +28,7 @@ jobs:
           pip install -r requirements.txt --extra-index-url https://pypi.org/simple
 
       - name: Execute Vulnerability Scanner
-        run: python3 "Vulnerability_Tool/Vulnerability_Scanner_V1.3.py" > security_scan_report.txt
+        run: python3 "Vulnerability_Tool/Vulnerability_Scanner_V1.3.py" --ci-mode > security_scan_report.txt
 
       - name: Save scan results as an artifact
         uses: actions/upload-artifact@v4
