@@ -30,7 +30,7 @@
             run: python3 "Vulnerability Tool/Vulnerability Scanner_V1.3.py" > security_scan_report.txt
     
           - name: Save scan results as an artifact
-            uses: actions/upload-artifact@v2
+            uses: actions/upload-artifact@v4
             with:
               name: security-scan-report
               path: security_scan_report.txt
