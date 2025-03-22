@@ -21,7 +21,8 @@ jobs:
         id: changed-files
         run: |
           git fetch origin master --depth=1
-          echo "MODIFIED_FILES=$(git diff --name-only origin/master ${{ github.sha }})" >> $GITHUB_ENV
+          MODIFIED_FILES=$(git diff --name-only origin/master ${{ github.sha }} | tr '\n' ' ')
+          echo "MODIFIED_FILES=${MODIFIED_FILES}" >> $GITHUB_ENV
 
       - name: Set up Python environment
         uses: actions/setup-python@v3
