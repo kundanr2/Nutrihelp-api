@@ -28,7 +28,7 @@ jobs:
       - name: Get list of changed files (new and modified)
         run: |
           git fetch origin main --depth=1
-          git diff --name-only origin/main > changed_files.txt
+          git diff --name-only origin/master > changed_files.txt
           cat changed_files.txt
         id: changed-files
 
