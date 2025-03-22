@@ -4,10 +4,10 @@ name: SecurityScanWorkflow
 on:
   push:
     branches:
-      - main
+      - **
   pull_request:
     branches:
-      - main
+      - **
 
 jobs:
   run-security-scan:
